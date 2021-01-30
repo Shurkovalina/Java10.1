@@ -19,4 +19,5 @@ public class Book extends Product {
     public void setAuthor(String author) {
         this.author = author;
     }
+
 }
