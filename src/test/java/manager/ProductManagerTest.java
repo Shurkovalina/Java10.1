@@ -27,6 +27,49 @@ class ProductManagerTest {
         Product[] actual = manager.searchBy("book3");
 
         assertArrayEquals(expected, actual);
+ sec
+    }
+
+    @Test
+    public void search2() {
+        ProductManager manager = new ProductManager(new ProductRepository());
+        Product product1 = new Book(1, "book1", 10, "author1");
+        Product product2 = new Smartphone(4, "Smart", 100, "Samsung");
+
+        manager.add(product1);
+        manager.add(product2);
+
+        Product[] expected = new Product[]{product2};
+        Product[] actual = manager.searchBy("Samsung");
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void bookMatches1() {
+        Book book = new Book(1,"book", 10, "author");
+        assertEquals(true,book.matches("book"));
+    }
+
+    @Test
+    void bookMatches2() {
+        Book book = new Book(1,"book", 10, "author");
+        assertEquals(true,book.matches("author"));
+    }
+
+    @Test
+    void smartphoneMatches() {
+        Smartphone smartphone = new Smartphone(1,"smart", 10, "samsung");
+        assertEquals(true,smartphone.matches("samsung"));
+    }
+
+    @Test
+    void productMatches() {
+        Product product1 = new Product(1,"bookFirst", 10);
+        Product product2 = new Product(1,"bookSecond", 10);
+        assertEquals(true,product2.matches("bookSecond"));
+
+ master
     }
 
     @Test

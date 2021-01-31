@@ -32,8 +32,13 @@ public class ProductManager {
     //    метод, который возвращает массив найденных товаров
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
+sec
+        for (Product product : repository.findAll()) {
+            if (product.matches(text)) {
+
         for (Product product : repository.findAll())
             if (matches(product, text)) {
+master
                 Product[] tmp = new Product[result.length + 1];
                 System.arraycopy(items, 0, tmp, 0, items.length);
                 int lastIndex = tmp.length - 1;
@@ -42,6 +47,8 @@ public class ProductManager {
             }
         return result;
     }
+
+sec
 
     //    метод, проверяющий, соответствует ли продукт поисковому запросу
     public boolean matches(Product product, String search) {
@@ -69,4 +76,5 @@ public class ProductManager {
         return true;
     }
 
+master
 }
