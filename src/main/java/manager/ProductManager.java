@@ -5,8 +5,6 @@ import domain.Product;
 import domain.Smartphone;
 import repository.ProductRepository;
 
-import java.util.Arrays;
-
 public class ProductManager {
     private ProductRepository repository;
 
@@ -22,8 +20,8 @@ public class ProductManager {
 
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
-        for (Product product : repository.findAll())
-            if (matches(product, text)) {
+        for (Product product : repository.findAll()) {
+            if (product.matches(text)) {
                 Product[] tmp = new Product[result.length + 1];
                 System.arraycopy(items, 0, tmp, 0, items.length);
                 int lastIndex = tmp.length - 1;
@@ -55,7 +53,7 @@ public class ProductManager {
                 return false;
             }
         }
-        return true;
+        return result;
     }
 
 }
