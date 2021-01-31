@@ -12,19 +12,19 @@ public class Smartphone extends Product {
         this.manufacturer = manufacturer;
     }
 
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
     @Override
     public boolean matches(String search) {
         if (super.matches(search)) {
             return true;
         }
         return manufacturer.equalsIgnoreCase(search);
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 }
