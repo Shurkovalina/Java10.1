@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.Objects;
-
 public class Product {
     private int id;
     private String name;
@@ -15,6 +13,7 @@ public class Product {
         this.name = name;
         this.price = price;
     }
+
 
     public boolean matches(String search) {
         if (name.equalsIgnoreCase(search)) {
