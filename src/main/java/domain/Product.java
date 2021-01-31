@@ -16,13 +16,6 @@ public class Product {
         this.price = price;
     }
 
-//    public boolean matches(String search) {
-//        if (name.equalsIgnoreCase(search)) {
-//                return true;
-//            }
-//        return true;
-//    }
-
     public int getId() {
         return id;
     }
@@ -47,12 +40,4 @@ public class Product {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                '}';
-    }
 }

@@ -16,20 +16,10 @@ public class ProductManager {
 
     public Product[] items = new Product[0];
 
-    public ProductManager() {
-    }
-
-    public ProductManager(Product[] items) {
-        this.items = items;
-    }
-
-    //    метод, добавляющий продукты в репозиторий
     public void add(Product item) {
         repository.save(item);
     }
 
-
-    //    метод, который возвращает массив найденных товаров
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
         for (Product product : repository.findAll())
@@ -43,7 +33,6 @@ public class ProductManager {
         return result;
     }
 
-    //    метод, проверяющий, соответствует ли продукт поисковому запросу
     public boolean matches(Product product, String search) {
         if (product instanceof Book) {
             Book book = (Book) product;
