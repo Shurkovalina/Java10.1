@@ -27,4 +27,5 @@ public class Smartphone extends Product {
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }
+
 }
