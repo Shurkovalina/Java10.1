@@ -14,12 +14,10 @@ public class ProductManager {
 
     public Product[] items = new Product[0];
 
-    //    метод, добавляющий продукты в репозиторий
     public void add(Product item) {
         repository.save(item);
     }
 
-    //    метод, который возвращает массив найденных товаров
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
         for (Product product : repository.findAll()) {
