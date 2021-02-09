@@ -23,7 +23,7 @@ public class ProductManager {
         for (Product product : repository.findAll()) {
             if (product.matches(text)) {
                 Product[] tmp = new Product[result.length + 1];
-                System.arraycopy(items, 0, tmp, 0, items.length);
+                System.arraycopy(result, 0, tmp, 0, result.length);
                 int lastIndex = tmp.length - 1;
                 tmp[tmp.length - 1] = product;
                 result = tmp;
