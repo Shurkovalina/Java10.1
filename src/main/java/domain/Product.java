@@ -22,7 +22,6 @@ public class Product {
         return false;
     }
 
-
     public int getId() {
         return id;
     }

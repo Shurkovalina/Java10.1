@@ -87,18 +87,24 @@ class ProductManagerTest {
     @Test
     void bookMatches1() {
         Book book = new Book(1, "book", 10, "author");
+      
+        assertEquals(true, book.matches("book"));
         assertTrue(book.matches("book"));
     }
 
     @Test
     void bookMatches2() {
         Book book = new Book(1, "book", 10, "author");
+      
+        assertEquals(true, book.matches("author"));
         assertTrue(book.matches("author"));
     }
 
     @Test
     void smartphoneMatches() {
         Smartphone smartphone = new Smartphone(1, "smart", 10, "samsung");
+      
+        assertEquals(true, smartphone.matches("samsung"));
         assertTrue(smartphone.matches("samsung"));
     }
 
@@ -106,8 +112,9 @@ class ProductManagerTest {
     void productMatches() {
         Product product1 = new Product(1, "bookFirst", 10);
         Product product2 = new Product(1, "bookSecond", 10);
+      
+        assertEquals(true, product2.matches("bookSecond"));
         assertTrue(product2.matches("bookSecond"));
-
     }
 
 }
