@@ -20,10 +20,10 @@ public class ProductManager {
         repository.save(item);
     }
 
-    public Product[] searchBy(String text) {
+    public Product[] searchBy(String requiredProduct) {
         Product[] result = new Product[0];
         for (Product product : repository.findAll()){
-            if (matches(product, text)) {
+            if (matches(product, requiredProduct)) {
                 Product[] tmp = new Product[result.length + 1];
                 System.arraycopy(result, 0, tmp, 0, result.length);
                 int lastIndex = tmp.length - 1;
